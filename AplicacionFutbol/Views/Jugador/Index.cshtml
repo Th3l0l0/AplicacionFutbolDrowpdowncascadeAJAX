@@ -1,0 +1,78 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="~/Scripts/funciones.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Listado de Jugadores</h2>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Agregar Jugador</button><br /><br />
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre de Jugador</th>
+                    <th>F. de Nacimiento</th>
+                    <th>Pais</th>
+                    <th>Continente</th>
+                    <th>Peso</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                    <form id="formulario">
+                        <div class="form-group">
+                            <label for="ide_jug">ID</label>
+                            <input type="text" class="form-control" id="ide_jug" disabled/>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom_jug">Nombre</label>
+                            <input type="text" class="form-control" id="nom_jug" placeholder="Nombre" />
+                        </div>
+                        <div class="form-group">
+                            <label for="fna_jug">F. de Nacimiento</label>
+                            <input type="datetime" class="form-control" id="fna_jug" placeholder="DD/MM/YYYY" />
+                        </div>
+                        <div class="form-group">
+                            <label for="continentes">Continente</label>
+                            <select class="form-control" id="continentes" name="continentes">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="paises">Pais</label>
+                            <select class="form-control" id="paises" name="paises">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pes_jug">Peso</label>
+                            <input type="number" class="form-control" id="pes_jug" placeholder="Peso" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Guardar</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Actualizar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
